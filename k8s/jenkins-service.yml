@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jenkins-service
+spec:
+  selector:
+    app: jenkins
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+    - protocol: TCP
+      port: 50000
+      targetPort: 50000
