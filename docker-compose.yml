@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   jenkins:
-    image: kozhenkov/jenkins-docker:lts
+    image: kozhenkov/jenkins-docker:latest
     entrypoint: ["/sbin/tini", "--", "/usr/local/bin/jenkins-init.sh"] 
     deploy:
       replicas: 1
@@ -17,7 +17,7 @@ services:
       - /usr/local/bin/docker:/bin/docker
     ports:
       - 8081:8080
-      - 50001:5000
+      - 50001:50000
     configs:
       - source: jenkins-init.sh
         target: /usr/local/bin/jenkins-init.sh
