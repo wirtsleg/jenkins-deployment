@@ -1,10 +1,10 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins-deployment
   labels:
     app: jenkins
-  namespace: jenkins
+#  namespace: jenkins
 spec:
   replicas: 1
   selector:
@@ -41,5 +41,5 @@ spec:
             type: File
         - name: docker-bin
           hostPath:
-            path: /usr/local/bin/docker
+            path: /usr/bin/docker
             type: File

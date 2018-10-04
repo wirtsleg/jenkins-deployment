@@ -5,12 +5,9 @@ metadata:
 spec:
   selector:
     app: jenkins
+  type: NodePort
   ports:
-    - protocol: TCP
-      port: 80
+    - port: 80
       targetPort: 8080
-      name: http
-    - protocol: TCP
-      port: 50000
-      targetPort: 50000
-      name: java-api
+  externalIPs:
+    - 142.93.163.95
